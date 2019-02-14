@@ -1,0 +1,25 @@
+<!-- default page view -->
+<p class="app-title">My thoughts</p>
+
+<section>
+    <button ng-click="$ctrl.showForm()">new thought button</button>
+</section>
+
+
+<!-- <post
+post="post"
+></post> -->
+<section ng-repeat="post in $ctrl.postLibrary track by $index">
+    <p>Title: {{ post.title }}</p>
+    <p>Thought: {{ post.thought }}</p>
+    <a href=""><i class="material-icons" ng-click="$ctrl.removePost($index)">
+        clear
+        </i></a>
+</section>
+
+<!-- postform -->
+<postform
+addpost="$ctrl.addPost(newPost)"
+form-Toggle="$ctrl.formToggle"
+show-form="$ctrl.showForm()"
+></postform>
